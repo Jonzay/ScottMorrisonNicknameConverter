@@ -8,9 +8,9 @@ for (var i = 0; i < elements.length; i++) {
 
         if (node.nodeType === 3) {
             var text = node.nodeValue;
-            var replacedText = text.replace(/sco mo/gi, 'Scott Morrison');
-            var replacedText2 = text.replace(/scomo/gi, 'Scott Morrison');
-            var replacedText3 = text.replace(/Sco-Mo/gi, 'Scott Morrison');
+            var replacedText = text.replace(/\bsco mo\b/gi, 'Scott Morrison');
+            var replacedText2 = text.replace(/\bscomo\b/gi, 'Scott Morrison');
+            var replacedText3 = text.replace(/\bsco-mo\b/gi, 'Scott Morrison');
             if (replacedText !== text) {
                 element.replaceChild(document.createTextNode(replacedText), node);
             }
